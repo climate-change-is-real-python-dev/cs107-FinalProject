@@ -6,3 +6,5 @@
 2. Jenny Wang
 3. Dashiell Saver-Young
 4. Apisada Chulakadabba
+
+[![Build Status](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject.svg?branch=Milestone_1B)](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject)
