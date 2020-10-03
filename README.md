@@ -8,3 +8,6 @@
 4. Apisada Chulakadabba
 
 [![Build Status](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject.svg?branch=Milestone_1B)](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject)
+
+CodeCov Branch
+[![codecov](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject/branch/master/graph/badge.svg)](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject)
