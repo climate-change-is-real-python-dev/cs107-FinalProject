@@ -6,3 +6,6 @@
 2. Jenny Wang
 3. Dashiell Saver-Young
 4. Apisada Chulakadabba
+
+CodeCov Branch
+[![codecov](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject/branch/master/graph/badge.svg)](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject)
