@@ -1,2 +1,1 @@
-#print('hello')
-from .mod import *
+from .toydiff import *
