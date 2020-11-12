@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 
 setuptools.setup(
-	name="socialAD",
+	name="package-jenliketen",
 	version="0.1.2",
 	scripts=["socialAD"],
 	author="Ju Chulakadabba, Tao Tsui, Jenny Wang, Dash Young-Saver",
