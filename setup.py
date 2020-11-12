@@ -1,12 +1,12 @@
 import setuptools
 
 with open("README.md", "r") as fh:
-	long_description = fh.head()
+	long_description = fh.read()
 
 
 setuptools.setup(
 	name="socialAD",
-	version="0.1.2",
+	version="0.1.5",
 	scripts=["socialAD"],
 	author="Ju Chulakadabba, Tao Tsui, Jenny Wang, Dash Young-Saver",
 	author_email="ywang1@hsph.harvard.edu",

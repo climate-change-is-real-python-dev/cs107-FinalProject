@@ -1,3 +1,6 @@
+# SocialAD
+This is a package developed for a class project.
+
 ## Final Project CS107/AC207/CS207
 ### Group 29
 #### Members
