@@ -7,7 +7,13 @@
 3. Dashiell Saver-Young
 4. Apisada Chulakadabba
 
+Build Status for master branch
+[![Build Status m2](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject.svg?branch=master)](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject)
+
+
+Build Status for m2 branch
 [![Build Status m2](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject.svg?branch=m2)](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject)
+
 
 
 CodeCov Badge for master branch
