@@ -73,7 +73,7 @@ cc = arctan( arctan(0.5) + arctan(x))
 print(cc.val, cc.der)
 print('\n')\
 
-cc = arcos(x) + arccos(0.5)
+cc = arccos(x) + arccos(0.5)
 print(cc.val, cc.der)
 print('\n')\
 
