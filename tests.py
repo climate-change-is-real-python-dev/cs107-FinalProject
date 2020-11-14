@@ -1,12 +1,12 @@
 import unittest
 
-import awesome
+import socialAD
 
 
-class TestMethods(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(awesome.smile(), ":)")
+# class TestMethods(unittest.TestCase):
+#     def test_add(self):
+#         self.assertEqual(awesome.smile(), ":)")
 
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
