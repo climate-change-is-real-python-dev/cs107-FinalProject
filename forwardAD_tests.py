@@ -82,6 +82,33 @@ print(cc.val, cc.der)
 print('\n')\
 
 
+cc = tanh(x) + 2
+print(cc.val, cc.der)
+print('\n')\
+
+
+cc = x.__rsub__(tanh(0.5))
+print(cc.val, cc.der)
+print('\n')\
+
+
+cc = x*log(5)
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x*cos(5)
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x*tan(5)
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x*sinh(0.5)
+print(cc.val, cc.der)
+print('\n')\
+
+
 '''
 print('Should be: -4.3333 -0.222222')
 fa = alpha / x - beta
