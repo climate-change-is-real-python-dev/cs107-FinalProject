@@ -11,6 +11,7 @@
 
 
 CodeCov Badge for master branch
+[![codecov](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject/branch/master/graph/badge.svg)](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject)
 
 CodeCov Badge for m2 branch
 [![codecov](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject/branch/m2/graph/badge.svg)](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject)
