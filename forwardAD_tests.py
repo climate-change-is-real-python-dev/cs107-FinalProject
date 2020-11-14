@@ -1,4 +1,4 @@
-import forwardAD
+from forwardAD import *
 
 
 ###For Documentation###
