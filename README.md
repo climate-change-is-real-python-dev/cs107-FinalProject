@@ -1,6 +1,3 @@
-# SocialAD
-This is a package developed for a class project.
-
 ## Final Project CS107/AC207/CS207
 ### Group 29
 #### Members
@@ -12,5 +9,12 @@ This is a package developed for a class project.
 
 [![Build Status](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject.svg?branch=Milestone_1B)](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject)
 
-CodeCov Badge
+[![Build Status m2](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject.svg?branch=m2)](https://travis-ci.com/climate-change-is-real-python-dev/cs107-FinalProject)
+
+
+CodeCov Badge for master branch
 [![codecov](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject/branch/master/graph/badge.svg)](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject)
+
+CodeCov Badge for m2 branch
+[![codecov](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject/branch/m2/graph/badge.svg)](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject)
+
