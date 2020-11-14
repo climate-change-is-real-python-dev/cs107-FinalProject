@@ -1,7 +1,11 @@
 import numpy as np
 
 #Forward mode, automatic differentiation class
-class AutoDiffToy:
+
+##############################################
+######       Arithmetic Operators       ######
+##############################################
+class forwardAD:
 	def __init__(self, val, der=1.0):
 		self.val = val
 		self.der = der
@@ -19,7 +23,7 @@ class AutoDiffToy:
 			out_val = self.val + other
 			out_der = self.der
 
-		return AutoDiffToy(out_val, out_der)
+		return forwardAD(out_val, out_der)
 
 	#Overloaded subtraction
 	def __sub__(self, other):
@@ -34,7 +38,7 @@ class AutoDiffToy:
 			out_val = self.val - other
 			out_der = self.der
 
-		return AutoDiffToy(out_val, out_der)
+		return forwardAD(out_val, out_der)
 
 	#Overloaded multiplication
 	def __mul__(self, other):
@@ -49,7 +53,7 @@ class AutoDiffToy:
 			out_val = self.val * other
 			out_der = self.der * other
 
-		return AutoDiffToy(out_val, out_der)
+		return forwardAD(out_val, out_der)
 
 
 	#Overloaded division
@@ -65,7 +69,7 @@ class AutoDiffToy:
 			out_val = self.val / other
 			out_der = self.der / other
 
-		return AutoDiffToy(out_val, out_der)
+		return forwardAD(out_val, out_der)
 
 	#Overloaded power
 	def __pow__(self, other):
@@ -80,7 +84,7 @@ class AutoDiffToy:
 			out_val = self.val ** other
 			out_der = self.der * other * self.val **(other - 1.0)
 
-		return AutoDiffToy(out_val, out_der)
+		return forwardAD(out_val, out_der)
 
 	### Reversed Operations ###
 
@@ -101,7 +105,7 @@ class AutoDiffToy:
 			out_val = other - self.val
 			out_der = -1.0 * self.der
 
-		return AutoDiffToy(out_val, out_der)
+		return forwardAD(out_val, out_der)
 
 	#Multiplication is commutative
 	def __rmul__(self, other):
@@ -119,7 +123,7 @@ class AutoDiffToy:
 			out_val = other / self.val
 			out_der = (-1.0) * other * self.der / (self.val**2.0)
 		
-		return AutoDiffToy(out_val, out_der)
+		return forwardAD(out_val, out_der)
 
 	#Reverse power
 	def __rpow__(self, other):
@@ -134,16 +138,21 @@ class AutoDiffToy:
 			out_val = other ** self.val
 			out_der = other ** self.val * self.der * np.log(other)
 
-		return AutoDiffToy(out_val, out_der)
+		return forwardAD(out_val, out_der)
+
+
+##############################################
+######       Elementary Functions       ######
+##############################################
 
 #For getting an 'e'
-class e(AutoDiffToy):
+class e(forwardAD):
 	def __init__(self, val=np.exp(1), der=0.0):
 		self.val = val
 		self.der = der
 
 #For getting a log, defaults to natural log
-class log(AutoDiffToy):
+class log(forwardAD):
 	def __init__(self, inputs, base = np.exp(1)):
 
 		#For getting log of variable expression, log is derivative/val
@@ -156,11 +165,14 @@ class log(AutoDiffToy):
 			self.val = np.log(inputs) / np.log(base)
 			self.der = 0.0
 
+
+#####  Trignometric Functions #####
+
 #For getting a sine
-class sin(AutoDiffToy):
+class sin(forwardAD):
 	def __init__(self, inputs):
 
-		#For getting log of variable expression, log is derivative/val
+		#For getting sine of variable expression, der = in.der * cos(in.val)
 		try:
 			self.val = np.sin(inputs.val)
 			self.der = inputs.der * np.cos(inputs.val)
@@ -171,6 +183,131 @@ class sin(AutoDiffToy):
 			self.der = 0.0
 
 
+#For getting a cosine
+class cos(forwardAD):
+	def __init__(self, inputs):
+
+		#For getting cosine of variable expression, der = -in.der * sin(in.val)
+		try:
+			self.val = np.cos(inputs.val)
+			self.der = -inputs.der * np.sin(inputs.val)
+
+		#For cosine of float, use numpy.cos
+		except AttributeError:
+			self.val = np.cos(inputs)
+			self.der = 0.0
+
+
+#For getting a tangent
+class tan(forwardAD):
+	def __init__(self, inputs):
+
+		#For getting tangent of variable expression, der = in.der * (1 + tan(in.val)^2)
+		try:
+			self.val = np.tan(inputs.val)
+			self.der = inputs.der * (1 + np.tan(inputs.val)**2)
+
+		#For tanget of float, use numpy.tan
+		except AttributeError:
+			self.val = np.tan(inputs)
+			self.der = 0.0
+
+
+##### Inverse Trignometric Functions #####
+
+#For getting a inverse sine
+class arcsin(forwardAD):
+	def __init__(self, inputs):
+
+		#For getting arcsin of variable expression, der = in.der * (1/sqrt(1-inputs.val**2))
+		try:
+			self.val = np.arcsin(inputs.val)
+			self.der = inputs.der * (1/np.sqrt(1-inputs.val**2))
+
+		#For arcsin of float, use numpy.arcsin
+		except AttributeError:
+			self.val = np.arcsin(inputs)
+			self.der = 0.0
+
+
+#For getting a inverse cosine
+class arccos(forwardAD):
+	def __init__(self, inputs):
+
+		#For getting arccos of variable expression, der = -in.der * sin(in.val)
+		try:
+			self.val = np.arccos(inputs.val)
+			self.der = -inputs.der * (1/np.sqrt(1-inputs.val**2))
+
+		#For arccos of float, use numpy.arccos
+		except AttributeError:
+			self.val = np.arccos(inputs)
+			self.der = 0.0
+
+
+#For getting a inverse tangent
+class arctan(forwardAD):
+	def __init__(self, inputs):
+
+		#For getting arctan of variable expression, der = in.der * (1 / in.val^2)
+		try:
+			self.val = np.arctan(inputs.val)
+			self.der = inputs.der * (1/(1+inputs.val**2))
+
+		#For arctan of float, use numpy.arctan
+		except AttributeError:
+			self.val = np.arctan(inputs)
+			self.der = 0.0
+
+
+##### Hyperbolic Trignometric Functions #####
+
+#For getting a hyperbolic sine
+class sinh(forwardAD):
+	def __init__(self, inputs):
+
+		#For getting sinh of variable expression, der = in.der * sinh(in.val)
+		try:
+			self.val = np.sinh(inputs.val)
+			self.der = np.cosh(inputs.val)
+
+		#For sine of float, use numpy.tan
+		except AttributeError:
+			self.val = np.sinh(inputs)
+			self.der = 0.0
+
+
+#For getting a hyperbolic cosh
+class cosh(forwardAD):
+	def __init__(self, inputs):
+
+		#For getting cosh of variable expression, der = in.der * sinh(in.val)
+		try:
+			self.val = np.cosh(inputs.val)
+			self.der = np.sinh(inputs.val)
+
+		#For sine of float, use numpy.cos
+		except AttributeError:
+			self.val = np.cosh(inputs)
+			self.der = 0.0
+
+#For getting a hyperbolic tangent
+class tanh(forwardAD):
+	def __init__(self, inputs):
+
+		#For getting tangent of variable expression, der = in.der * (1 + tan(in.val)^2)
+		try:
+			self.val = np.tanh(inputs.val)
+			self.der = inputs.der * (1 - np.tanh(inputs.val)**2)
+
+		#For sine of float, use numpy.tan
+		except AttributeError:
+			self.val = np.tanh(inputs)
+			self.der = 0.0
+
+
+
+
 ###For Documentation###
 #Always show multiplication explicitly with a '*'. You cannot just put a number next to x
 #Use e() for the natural number (Euler's number): e
@@ -178,11 +315,47 @@ class sin(AutoDiffToy):
 
 ##Tests
 a = 3.00 # Value to evaluate at
-x = AutoDiffToy(a)
+x = forwardAD(a)
 alpha = 2.00
 beta = 5.00
 
 
+print('Should be: 0.401265 0.820037')
+cc = (4*e())**(sin(7 - log(5 + 3** x)))
+print(cc.val, cc.der)
+print('\n')\
+
+
+print('Should be: 0.110286 -0.0933502')
+cc = (4*e())**(cos(7 - log(5 + 3** x)))
+print(cc.val, cc.der)
+print('\n')\
+
+
+print('Should be: 2.68682 -6.96274')
+cc = (4*e())**(tan(7 - log(5 + 3** x)))
+print(cc.val, cc.der)
+print('\n')\
+
+
+print('Should be: 5.52971e17 -2.09766e19')
+cc = (4*e())**(sinh(7 - log(5 + 3** x)))
+print(cc.val, cc.der)
+print('\n')\
+
+print('Should be: 5.92848e17 -2.24511e19')
+cc = (4*e())**(cosh(7 - log(5 + 3** x)))
+print(cc.val, cc.der)
+print('\n')\
+
+print('Should be: 1.4097 -0.348387')
+cc = (4*e())**(x**(-2)*arctan(7 - log(5 + 3** x)))
+print(cc.val, cc.der)
+print('\n')\
+
+
+
+'''
 print('Should be: -4.3333 -0.222222')
 fa = alpha / x - beta
 print(fa.val, fa.der)
@@ -292,8 +465,6 @@ print('Should be: -1.683 -1.0')
 cb = log(5 / x ** 3)
 print(cb.val, cb.der)
 print('\n')
+'''
 
-print('Should be: 4599.92 -10174.9588')
-cc = (4*e())**(7 - log(5 + 3** x))
-print(cc.val, cc.der)
-print('\n')
+
