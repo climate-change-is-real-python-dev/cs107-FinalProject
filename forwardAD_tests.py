@@ -106,6 +106,16 @@ cc = x.__truediv__(tanh(0.5))
 print(cc.val, cc.der)
 print('\n')\
 
+cc = x.__rtruediv__(tanh(x))
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x.__truediv__(tanh(x))
+print(cc.val, cc.der)
+print('\n')\
+
+
+
 cc = x.__rpow__(tanh(0.5)) 
 print(cc.val, cc.der)
 print('\n')\
