@@ -92,15 +92,15 @@ print(cc.val, cc.der)
 print('\n')\
 
 
-cc = x*log(5)
+cc = x*log(5.0)
 print(cc.val, cc.der)
 print('\n')\
 
-cc = x*cos(5)
+cc = x*cos(5.0)
 print(cc.val, cc.der)
 print('\n')\
 
-cc = x*tan(5)
+cc = x*tan(5.0)
 print(cc.val, cc.der)
 print('\n')\
 
