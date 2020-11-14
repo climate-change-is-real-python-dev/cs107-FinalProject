@@ -1,5 +1,4 @@
-cd socialAD
-from forwardAD import *
+from socialAD.forwardAD import *
 
 
 ###For Documentation###
