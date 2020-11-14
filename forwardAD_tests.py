@@ -1,3 +1,4 @@
+cd socialAD
 from forwardAD import *
 
 
