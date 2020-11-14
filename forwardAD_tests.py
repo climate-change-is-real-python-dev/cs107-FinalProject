@@ -77,7 +77,7 @@ cc = arccos(x) + arccos(0.5)
 print(cc.val, cc.der)
 print('\n')\
 
-cc = arsin(x) + arcsin(0.5)
+cc = arcsin(x) + arcsin(0.5)
 print(cc.val, cc.der)
 print('\n')\
 
