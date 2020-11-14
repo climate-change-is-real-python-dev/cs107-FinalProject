@@ -110,11 +110,11 @@ cc = x.__rtruediv__(tanh(x))
 print(cc.val, cc.der)
 print('\n')\
 
-cc = 2.__truediv__(tanh(0.5))
+cc = x.__truediv__(0.5)
 print(cc.val, cc.der)
 print('\n')\
 
-cc = 2.__rtruediv__(tanh(0.5))
+cc = x.__rtruediv__(0.5)
 print(cc.val, cc.der)
 print('\n')\
 
