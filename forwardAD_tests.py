@@ -47,6 +47,40 @@ print(cc.val, cc.der)
 print('\n')\
 
 
+'''
+Adding more tests
+'''
+
+cc = x + (2 + 7*x)
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x - (2 - 6*x - 2*x)
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x - (2 - 6*x -3*x)
+print(cc.val, cc.der)
+print('\n')\
+
+
+
+cc = sin( sin(10) + sin(x))
+print(cc.val, cc.der)
+print('\n')\
+
+cc = arctan( arctan(0.5) + arctan(x))
+print(cc.val, cc.der)
+print('\n')\
+
+cc = arccos(0.5)
+print(cc.val, cc.der)
+print('\n')\
+
+cc = tanh(0.5)
+print(cc.val, cc.der)
+print('\n')\
+
 
 '''
 print('Should be: -4.3333 -0.222222')
