@@ -73,9 +73,15 @@ cc = arctan( arctan(0.5) + arctan(x))
 print(cc.val, cc.der)
 print('\n')\
 
-cc = arccos(0.5)
+cc = arcos(x) + arccos(0.5)
 print(cc.val, cc.der)
 print('\n')\
+
+cc = arsin(x) + arcsin(0.5)
+print(cc.val, cc.der)
+print('\n')\
+
+
 
 cc = tanh(0.5)
 print(cc.val, cc.der)
@@ -88,6 +94,19 @@ print('\n')\
 
 
 cc = x.__rsub__(tanh(0.5))
+print(cc.val, cc.der)
+print('\n')\
+
+
+cc = x.__rtruediv__(tanh(0.5))
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x.__truediv__(tanh(0.5))
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x.__rpow__(tanh(0.5)) 
 print(cc.val, cc.der)
 print('\n')\
 
@@ -105,6 +124,10 @@ print(cc.val, cc.der)
 print('\n')\
 
 cc = x*sinh(0.5)
+print(cc.val, cc.der)
+print('\n')\
+
+cc = x*cosh(0.5) - 3
 print(cc.val, cc.der)
 print('\n')\
 
