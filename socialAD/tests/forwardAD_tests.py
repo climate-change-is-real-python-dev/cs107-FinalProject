@@ -1,3 +1,8 @@
+import os
+os.chdir('../')
+path = os.getcwd()
+
+print(path)
 from socialAD.forwardAD import *
 
 
