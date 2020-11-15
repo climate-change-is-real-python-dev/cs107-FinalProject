@@ -6,8 +6,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 	name="socialAD",
-	version="0.1.8",
-	scripts=["socialAD/socialAD"],
+	version="0.1.11",
+	scripts=["socialAD/forwardAD.py"],
 	author="Ju Chulakadabba, Tao Tsui, Jenny Wang, Dash Young-Saver",
 	author_email="ywang1@hsph.harvard.edu",
 	description="Automatic differentiation",
