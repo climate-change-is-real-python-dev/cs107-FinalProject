@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 	name="socialAD",
-	version="0.1.10",
+	version="0.1.14",
 	scripts=["socialAD/socialAD"],
 	author="Ju Chulakadabba, Tao Tsui, Jenny Wang, Dash Young-Saver",
 	author_email="ywang1@hsph.harvard.edu",
