@@ -18,6 +18,7 @@ if __name__ == "__main__":
     f = alpha * x + beta
     print(f.val, f.der)
 
+"""
 # If pip doesn't work
 import toydiff
 if __name__ == "__main__":
@@ -37,3 +38,4 @@ if __name__ == "__main__":
     beta = 3.0
     f = alpha * x + beta
     print(f.val, f.der)
+"""
