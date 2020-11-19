@@ -73,14 +73,6 @@ cc = arctan( arctan(0.5) + arctan(x))
 print(cc.val, cc.der)
 print('\n')\
 
-cc = arccos(x) + arccos(0.5)
-print(cc.val, cc.der)
-print('\n')\
-
-cc = arcsin(x) + arcsin(0.5)
-print(cc.val, cc.der)
-print('\n')\
-
 
 
 cc = tanh(0.5)
