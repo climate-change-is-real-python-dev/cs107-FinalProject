@@ -44,4 +44,4 @@ To get started, in your Python work environment, do:
 
 To use the forward mode, do:
 
-```from socialAD import forward```
+```from socialAD.forward import *```
