@@ -2,7 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
-tests.py
+
+socialAD/.DS_Store
+socialAD/tests/.DS_Store
 # C extensions
 *.so
 
