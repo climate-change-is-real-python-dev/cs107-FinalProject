@@ -27,3 +27,16 @@ CodeCov Badge for m2 branch
 CodeCov Badge for m2_travis branch
 [![codecov](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject/branch/m2_travis/graph/badge.svg)](https://codecov.io/gh/climate-change-is-real-python-dev/cs107-FinalProject)
 
+### How to install _socialAD_
+
+You can install this open source package by downloading it from pip:
+
+```pip install socialAD```
+
+To get started, in your Python work environment, do:
+
+```import socialAD```
+
+To use the forward mode, do:
+
+```from socialAD import forward```
