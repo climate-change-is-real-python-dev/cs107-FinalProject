@@ -8,7 +8,7 @@ import numpy as np
 class forwardAD:
 	def __init__(self, val, der=1.0):
 		self.val = val
-		self.der = der
+		self.der = np.ones(val.shape) * der
 
 	#Overloaded addition
 	def __add__(self, other):
