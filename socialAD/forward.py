@@ -9,6 +9,7 @@ class forwardAD:
 	def __init__(self, val, der=1.0):
 		self.val = val
 		self.der = np.ones(val.shape) * der
+		self.seed = np.floor(np.rand(1)*100000)
 
 	#Overloaded addition
 	def __add__(self, other):
