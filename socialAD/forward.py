@@ -312,15 +312,15 @@ class tanh(forwardAD):
 			self.der = 0.0
 class vector_func: #vector_func(f1, f2, ...)
     	def __init__(self, *args): #  
-        	jacobian = []
-        	values = []
+        	jacobian_array = []
+        	values_array = []
         	for function in args: 
-	            	jacobian.append(function.der)
-        	    	values.append(function.val)
-        	self.jacobian = np.array(jacobian)
-        	self.values = np.array(values)
+	            	jacobian_array.append(function.der)
+        	    	values_array.append(function.val)
+        	self.jacobian_array = np.array(jacobian_array)
+        	self.values_array = np.array(values_array)
         
     	def jacobian(self):
-        	return self.jacobian
+        	return self.jacobian_array
     	def values(self):
-        	return self.values
+        	return self.values_array
