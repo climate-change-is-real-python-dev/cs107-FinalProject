@@ -143,6 +143,33 @@ print('\n')\
 
 
 '''
+Adding function tests
+'''
+a = np.array([3]) # Value of x to be evaluated 
+x = forwardAD(a, numvar = 2, idx = 0)
+
+b = np.array([2]) # Value of y to be evaluated 
+y = forwardAD(b, numvar = 2, idx = 1)
+
+f1 = x*y
+f2 = x**2 + y**2
+
+print(f1.val) 
+print(f2.val) 
+
+print('---------')
+
+print(f1.der) 
+print(f2.der) 
+
+
+a = vector_func(f1, f2)
+print(a.jacobian)
+print(a.values)
+
+
+
+'''
 print('Should be: -4.3333 -0.222222')
 fa = alpha / x - beta
 print(fa.val, fa.der)
