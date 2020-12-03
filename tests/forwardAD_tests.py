@@ -142,6 +142,19 @@ print(cc.val, cc.der)
 print('\n')\
 
 
+
+cc = x*arccos(0.5) - 3*arccos(0.2)
+print(cc.val, cc.der)
+print('\n')\
+
+
+cc = x*arcsin(0.5) - 3*arcsin(0.2)
+print(cc.val, cc.der)
+print('\n')\
+
+
+
+
 '''
 Adding function tests
 '''
@@ -164,9 +177,9 @@ print(f2.der)
 
 
 a = vector_func(f1, f2)
-jacobian_a = a.jacobian()
+jacobian_a = a.jacobian
 print(jacobian_a)
-values_a = a.values()
+values_a = a.values
 print(values_a)
 
 
