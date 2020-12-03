@@ -6,9 +6,14 @@ import numpy as np
 ######       Arithmetic Operators       ######
 ##############################################
 class forwardAD:
-	def __init__(self, val, der=1.0):
+	def __init__(self, val, der_vector = None, numvar = 1, idx = 0):
 		self.val = val
-		self.der = np.ones(val.shape) * der
+		if der_vector is None:
+			der_vector = np.zeros(int(numvar))
+			der_vector[idx] = 1
+			self.der = der_vector
+		else:
+			self.der = der_vector
 		#self.seed = np.floor(np.rand(1)*100000)
 
 	#Overloaded addition
@@ -305,4 +310,17 @@ class tanh(forwardAD):
 		except AttributeError:
 			self.val = np.tanh(inputs)
 			self.der = 0.0
-
+class vector_func: #vector_func(f1, f2, ...)
+    	def __init__(self, *args): #  
+        	jacobian = []
+        	values = []
+        	for function in args: 
+	            	jacobian.append(function.der)
+        	    	values.append(function.val)
+        	self.jacobian = np.array(jacobian)
+        	self.values = np.array(values)
+        
+    	def jacobian(self):
+        	return self.jacobian
+    	def values(self):
+        	return self.values
