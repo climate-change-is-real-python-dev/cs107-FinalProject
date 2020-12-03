@@ -164,8 +164,8 @@ print(f2.der)
 
 
 a = vector_func(f1, f2)
-print(a.jacobian)
-print(a.values)
+print(a.jacobian())
+print(a.values())
 
 
 
