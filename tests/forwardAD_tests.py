@@ -182,6 +182,65 @@ print(jacobian_a)
 values_a = a.values
 print(values_a)
 
+print("\n")
+print("Tests for comparison operators")
+
+'''
+Comparison operators
+'''
+
+# Scalar inputs
+ob1 = forwardAD(4)
+ob2 = forwardAD(7)
+f1 = 4*ob1 + 3*ob2
+f2 = 3*ob1 + 4*ob2
+print("value of f1:", f1.val)
+print("value of f2:", f2.val)
+print("der of f1:", f1.der)
+print("der of f2:", f2.der)
+
+# True only if both val and der are true
+print("eq: ", f1 == f2) # expected: val false, der true, therefore false
+print("neq: ", f1 != f2) # expected: val true, der false, therefore false
+print("less than: ", f1 < f2) # expected: val true, der false, therefore false
+print("leq: ", f1 <= f2) # expected: val true, der true, therefore true
+print("greater than: ", f1 > f2) # expected: val false, der false, therefore false
+print("geq: ", f1 >= f2) # expected: val false, der true, therefore false
+
+# Reverse
+print("eq: ", f2 == f1) # expected: val false, der true, therefore false
+print("neq: ", f2 != f1) # expected: val true, der false, therefore false
+print("less than: ", f2 < f1) # expected: val false, der false, therefore false
+print("leq: ", f2 <= f1) # expected: val false, der true, therefore false
+print("greater than: ", f2 > f1) # expected: val false, der false, therefore false
+print("geq: ", f2 >= f1) # expected: val true, der true, therefore true
+
+# Vector inputs
+a = np.array([3])
+x = forwardAD(a, numvar=2, idx=0)
+
+b = np.array([2])
+y = forwardAD(b, numvar=2, idx=1)
+
+f1 = x*y
+f2 = x**2 + y**2
+
+# True only if both val and der are true
+print("eq: ", f1 == f2) # expected: val false, der false, therefore false
+print("neq: ", f1 != f2) # expected: val true, der [true true], therefore true
+print("less than: ", f1 < f2) # expected: val true, der [true true], therefore [true true]
+print("leq: ", f1 <= f2) # expected: val true, der [true true], therefore [true true]
+print("greater than: ", f1 > f2) # expected: val false, der [false false], therefore false
+print("geq: ", f1 >= f2) # expected: val false, der [false false], therefore false
+
+# Reverse
+print("eq: ", f2 == f1) # expected: val false, der false, therefore false
+print("neq: ", f2 != f1) # expected: val true, der [true true], therefore true
+print("less than: ", f2 < f1) # expected: val false, der [false false], therefore false
+print("leq: ", f2 <= f1) # expected: val false, der [false false], therefore false
+print("greater than: ", f2 > f1) # expected: val true, der [true true], therefore [true true]
+print("geq: ", f2 >= f1) # expected: val true, der [true true], therefore [true 
+
 
 
 '''
