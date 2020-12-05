@@ -215,6 +215,22 @@ print("leq: ", f2 <= f1) # expected: val false, der true, therefore false
 print("greater than: ", f2 > f1) # expected: val false, der false, therefore false
 print("geq: ", f2 >= f1) # expected: val true, der true, therefore true
 
+# Compare with a single number
+print("eq: ", f1 == 1) # expected: false
+print("neq: ", f1 != 1) # expected: true
+print("less than: ", f1 < 1) # expected: false
+print("leq: ", f1 <= 1) # expected: false
+print("greater than: ", f1 > 1) # expected: true
+print("geq: ", f1 >= 1) # expected: true
+
+# Reverse
+print("eq: ", 1 == f1) # expected: false
+print("neq: ", 1 != f1) # expected: true
+print("less than: ", 1 < f1) # expected: true
+print("leq: ", 1 <= f1) # expected: true
+print("greater than: ", f1 > f1) # expected: false
+print("geq: ", 1 >= f1) # expected: false
+
 # Vector inputs
 a = np.array([3])
 x = forwardAD(a, numvar=2, idx=0)
@@ -241,7 +257,21 @@ print("leq: ", f2 <= f1) # expected: val false, der [false false], therefore fal
 print("greater than: ", f2 > f1) # expected: val true, der [true true], therefore [true true]
 print("geq: ", f2 >= f1) # expected: val true, der [true true], therefore [true 
 
+# Compare with a single number
+print("eq: ", f1 == 1) # expected: false
+print("neq: ", f1 != 1) # expected: true
+print("less than: ", f1 < 1) # expected: false
+print("leq: ", f1 <= 1) # expected: false
+print("greater than: ", f1 > 1) # expected: true
+print("geq: ", f1 >= 1) # expected: true
 
+# Reverse
+print("eq: ", 1 == f1) # expected: false
+print("neq: ", 1 != f1) # expected: true
+print("less than: ", 1 < f1) # expected: true
+print("leq: ", 1 <= f1) # expected: true
+print("greater than: ", f1 > f1) # expected: false
+print("geq: ", 1 >= f1) # expected: false
 
 '''
 print('Should be: -4.3333 -0.222222')
