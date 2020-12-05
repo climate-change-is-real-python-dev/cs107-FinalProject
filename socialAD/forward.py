@@ -179,18 +179,12 @@ class forwardAD:
             return np.array_equal(self.val, other.val) and np.array_equal(self.der, other.der)
         except AttributeError:
             return np.array_equal(self.val, other)
-            
-    def __req__(self, other):
-        return self.__eq__(other)
     
     def __ne__(self, other):
         try:
             return not np.array_equal(self.val, other.val) and not np.array_equal(self.der, other.der)
         except AttributeError:
             return not np.array_equal(self.val, other)
-            
-    def __rne__(self, other):
-        return self.__ne__(other)
 
 
 ##############################################
