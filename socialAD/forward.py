@@ -355,8 +355,8 @@ class vector_func: #vector_func(f1, f2, ...)
         jacobian_array = []
         values_array = []
         for function in args: 
-                jacobian_array.append(function.der)
-                values_array.append(function.val)
+                jacobian_array.append(list(function.der))
+                values_array.append(list(function.val))
         self.jacobian_array = np.array(jacobian_array)
         self.values_array = np.array(values_array)
 
