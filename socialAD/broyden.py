@@ -86,11 +86,6 @@ def broyden(function, variables, init_values):
 			#Stores full function as a forwardAD object
 			AD_function = eval(function)
 
-			print('new run')
-			print('new values: ', new_values)
-			print('previous values: ', previous_values)
-			print('function value:', AD_function.val)
-
 			#Evaluate finite difference
 			finite_difference = (AD_function.val - previous_function_val) / (new_values - previous_values)
 
@@ -256,22 +251,22 @@ Adding function tests
 
 
 
-# print(broyden("y + x**3 + 3*x**2 - 21",["x","y"],[3, 7])[0][1])
+# print(broyden("y + x**3 + 3*x**2 - 21",["x","y"],[3, 7]))
 
 # functions = ["x**3 + 3*x**2 - 21", "x + 25"]
 
 # print(broyden(functions,"x",[5]))
 
 
-functions = ["x**2 - 25", "x - 5"]
+# functions = ["x**2 - 25", "x - 5"]
 
-print(broyden(functions,"x",[50]))
+# print(broyden(functions,"x",[50]))
 
 # functions = ["y + x**2 - 25", "2*y + x - 5"]
 
 # print(broyden(functions,["x","y"],[0,0]))
 
 
-functions = ["x**3 + y**3 - 2", "x**3 - y**3"]
+# functions = ["x + y - 2", "x - y"]
 
-print(broyden(functions,["x","y"],[4,4]))
+# print(broyden(functions,["x","y"],[4,4]))
