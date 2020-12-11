@@ -1,4 +1,4 @@
-from forward import *
+from socialAD.forward import *
 import numpy as np
 
 
