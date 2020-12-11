@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 	name="socialAD",
-	version="0.1.15",
+	version="0.1.16",
 	author="Ju Chulakadabba, Tao Tsui, Jenny Wang, Dash Young-Saver",
 	author_email="ywang1@hsph.harvard.edu",
 	description="Automatic differentiation",
