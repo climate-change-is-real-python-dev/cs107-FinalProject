@@ -29,12 +29,9 @@ def gradient_descent(variables, f, cur_x, rate, precision, previous_step_size, m
             previous_step_size = np.sum(abs(cur_x - prev_x)) #Change in x
             iters += 1 #iteration count
             
-            
-            
-            
-            
     print("Iteration",iters) #,"\nX value is", cur_x) #Print iterations
     print("The local minimum occurs at", cur_x)
+
 
 def gd_backtrack(variables, f, cur_x, precision, previous_step_size, max_iters):
     if isinstance(f, str):
