@@ -1,5 +1,5 @@
 import numpy as np
-#import socialAD.forward as fw
+
 #Forward mode, automatic differentiation class
 
 ##############################################
