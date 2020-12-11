@@ -1,3 +1,4 @@
+import socialAD.forward as fw
 import socialAD.gradient as gd
 import numpy as np
 import time

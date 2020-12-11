@@ -1,6 +1,5 @@
-import forward as fw
 import numpy as np
-
+from socialAD.forward import forwardAD
 
 def gradient_descent(variables, f, cur_x, rate, precision, previous_step_size, max_iters):
     if isinstance(f, str):
@@ -21,7 +20,7 @@ def gradient_descent(variables, f, cur_x, rate, precision, previous_step_size, m
                 #Store to variable name
                 name = variable
                 #Save as forwardAD object
-                exec(name + " = fw.forwardAD(np.array(cur_x[index]), numvar = len(variables), idx = index)")
+                exec(name + " = forwardAD(np.array(cur_x[index]), numvar = len(variables), idx = index)")
             #Stores full function as a forwardAD object
             AD_function = eval(f)
             
@@ -69,7 +68,7 @@ def gd_backtrack(variables, f, cur_x, precision, previous_step_size, max_iters):
                 name = variable
 
                 #Save as forwardAD object
-                exec(name + " = fw.forwardAD(np.array(cur_x[index]), numvar = len(variables), idx = index)")
+                exec(name + " = forwardAD(np.array(cur_x[index]), numvar = len(variables), idx = index)")
 #                print(eval(name))
                 
             #Stores full function as a forwardAD object
@@ -137,7 +136,7 @@ def BFGS(variables, f, cur_x, precision, max_iters):
                 name = variable
 
                 #Save as forwardAD object
-                exec(name + " = fw.forwardAD(np.array(cur_x[index]), numvar = len(variables), idx = index)")
+                exec(name + " = forwardAD(np.array(cur_x[index]), numvar = len(variables), idx = index)")
 
             #Stores full function as a forwardAD object
             AD_function = eval(f)
@@ -213,7 +212,7 @@ def BFGS_backtrack(variables, f, cur_x, precision, max_iters):
                 name = variable
 
                 #Save as forwardAD object
-                exec(name + " = fw.forwardAD(np.array(cur_x[index]), numvar = len(variables), idx = index)")
+                exec(name + " = forwardAD(np.array(cur_x[index]), numvar = len(variables), idx = index)")
 
             #Stores full function as a forwardAD object
             #print(f)
