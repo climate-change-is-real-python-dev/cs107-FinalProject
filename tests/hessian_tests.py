@@ -65,6 +65,6 @@ x = forwardAD_pro(0.387)
 
 f = log(1/(tanh(x)*x**2))
 
-print(f.func.val, f.dera.val, f.dera.der)s
+print(f.func.val, f.dera.val, f.dera.der)
 
 
