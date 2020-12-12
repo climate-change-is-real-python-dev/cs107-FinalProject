@@ -217,6 +217,12 @@ class sqrt(forwardAD):
         self.val = res.val
         self.der = res.der
 
+class sigmoid(forwardAD):
+    def __init__(self, inputs):
+        res = e()**inputs / (e()**inputs + 1)
+        self.val = res.val
+        self.der = res.der
+
 #####  Trignometric Functions #####
 
 #For getting a sine
