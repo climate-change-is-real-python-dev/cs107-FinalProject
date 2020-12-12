@@ -4,7 +4,7 @@
 
 1. Tao Tsui
 2. Jenny Wang
-3. Dashiell Saver-Young
+3. Dashiell Young-Saver
 4. Apisada Chulakadabba
 
 Build Status for master branch
@@ -30,4 +30,6 @@ To get started, in your Python work environment, do:
 
 To use the forward mode, do:
 
-```from socialAD.forward import *```
+```from socialAD.forward import forwardAD```
+
+For details, please check out our [documentation](https://github.com/climate-change-is-real-python-dev/cs107-FinalProject/blob/master/docs/documentation.ipynb).
