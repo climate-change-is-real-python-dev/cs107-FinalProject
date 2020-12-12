@@ -10,11 +10,10 @@ class forwardAD:
         self.val = val
         if der_vector is None:
             der_vector = np.zeros(int(numvar))
-            der_vector[idx] = 1
+            der_vector[idx] = 1.0
             self.der = der_vector
         else:
             self.der = der_vector
-        #self.seed = np.floor(np.rand(1)*100000)
 
     #Overloaded addition
     def __add__(self, other):
@@ -211,6 +210,13 @@ class log(forwardAD):
             self.val = np.log(inputs) / np.log(base)
             self.der = 0.0
 
+#For getting a log, defaults to natural log
+class sqrt(forwardAD):
+    def __init__(self, inputs):
+        res = inputs**(1/2)
+        self.val = res.val
+        self.der = res.der
+
 
 #####  Trignometric Functions #####
 
@@ -364,3 +370,13 @@ class vector_func: #vector_func(f1, f2, ...)
         return self.jacobian_array
     def values(self):
         return self.values_array
+
+
+
+
+
+
+
+
+
+
