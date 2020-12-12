@@ -152,7 +152,9 @@ cc = x*arcsin(0.5) - 3*arcsin(0.2)
 print(cc.val, cc.der)
 print('\n')\
 
-
+cc = sigmoid(0.5) - 3*sigmoid(x)
+print(cc.val, cc.der)
+print('\n')\
 
 
 '''

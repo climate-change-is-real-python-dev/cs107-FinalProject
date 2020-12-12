@@ -4,7 +4,7 @@
 
 1. Tao Tsui
 2. Jenny Wang
-3. Dashiell Saver-Young
+3. Dashiell Young-Saver
 4. Apisada Chulakadabba
 
 Build Status for master branch
@@ -30,13 +30,15 @@ To get started, in your Python work environment, do:
 
 To use our various modules, use the following statements:
 
-```
 import socialAD.forward as fw
 import socialAD.forward_pro as fwp
 import socialAD.root_finding as rf
 import socialAD.gradient as gd
 import numpy as np
 ```
+
+For details, please check out our [documentation](https://github.com/climate-change-is-real-python-dev/cs107-FinalProject/blob/master/docs/documentation.ipynb).
+
 
 ### Broader Impact Statement
 

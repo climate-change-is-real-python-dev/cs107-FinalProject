@@ -211,6 +211,17 @@ class log(forwardAD):
             self.val = np.log(inputs) / np.log(base)
             self.der = 0.0
 
+class sqrt(forwardAD):
+    def __init__(self, inputs):
+        res = inputs**(1/2)
+        self.val = res.val
+        self.der = res.der
+
+class sigmoid(forwardAD):
+    def __init__(self, inputs):
+        res = e()**inputs / (e()**inputs + 1)
+        self.val = res.val
+        self.der = res.der
 
 #####  Trignometric Functions #####
 
