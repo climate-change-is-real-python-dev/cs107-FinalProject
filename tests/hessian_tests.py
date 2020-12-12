@@ -18,13 +18,6 @@ f = log(x)**2
 
 print(f.func.val, f.dera.val, f.dera.der)
 
-x = forwardAD(3.0)
-
-f = log(x)**2
-
-print(f.val, f.val, f.der)
-
-
 x = forwardAD_pro(0.387)
 
 f = log(1/(tan(x)*x**2))

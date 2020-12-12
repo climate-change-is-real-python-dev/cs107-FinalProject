@@ -328,17 +328,4 @@ class vector_func: #vector_func(f1, f2, ...)
         return self.values_array
 
 
-# Hessian Implementation
-def hessian(f):
-    n = len(f.func.val)
-    H = np.zeros((n,n))
-
-    for i in range(n):
-        for j in range(n):
-            H[i, j] = f.dera[i].der[j]
-
-    return H
-
-
-
 
