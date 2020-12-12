@@ -1,6 +1,6 @@
 import numpy as np
-import forward as f
-from forward import forwardAD
+import socialAD.forward as f
+from socialAD.forward import forwardAD
 
 class forwardAD_pro:
 
