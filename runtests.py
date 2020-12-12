@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 import runpy
 runpy.run_path(path_name='tests/gradient_tests.py')

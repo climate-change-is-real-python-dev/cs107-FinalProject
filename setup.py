@@ -6,8 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
 	name="socialAD",
-	version="0.1.14",
-	scripts=["socialAD/socialAD"],
+	version="0.1.17",
 	author="Ju Chulakadabba, Tao Tsui, Jenny Wang, Dash Young-Saver",
 	author_email="ywang1@hsph.harvard.edu",
 	description="Automatic differentiation",
@@ -17,6 +16,5 @@ setuptools.setup(
 	classifiers=[
 	"Programming Language :: Python :: 3",
 	"License :: OSI Approved :: MIT License",
-	#"Operating System :: OS Independent",
 	],
 )
